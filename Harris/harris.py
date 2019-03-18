@@ -22,7 +22,7 @@ def find_corners(img, ksize, w, sigma):
             sub_Iyy = Iyy[i - w:i + w+1, j - w:j + w+1]
             M = np.array([[np.sum(sub_Ixx), np.sum(sub_Ixy)], [np.sum(sub_Ixy), np.sum(sub_Iyy)]])
             R_matrix[i][j] = np.linalg.det(M) - sigma * (np.trace(M) ** 2)
-    img[R_matrix > 10000] = [0, 0, 255]
+    img[R_matrix > 7000000] = [0, 0, 255]
     img = cv2.cvtColor(img,  cv2.COLOR_BGR2RGB)
     plt.imshow(img)
     plt.show()
