@@ -40,5 +40,5 @@ clf.fit(X, y)
 
 # print(clf.predict(X))
 print(clf.score(X, y))
-predict_img("/home/shrouk_mansour/Pictures/1.jpg")
+predict_img("1.jpg")
 
