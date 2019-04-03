@@ -64,10 +64,10 @@ def get_block_fv(block_gradient, block_angle):
 
 
 def get_img_fv(gradient, angle):
-    fv = np.zeros((32, 36))
+    fv = np.zeros((105, 36))
     x = 0
-    for i in range(0, gradient.shape[0], 16):
-        for j in range(0, gradient.shape[1], 16):
+    for i in range(0, gradient.shape[0]-8, 8):
+        for j in range(0, gradient.shape[1]-8, 8):
             fv[x, :] = get_block_fv(gradient[i:i + 16, j:j + 16], angle[i:i + 16, j:j + 16])
             x = x + 1
     return fv.flatten()

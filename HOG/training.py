@@ -32,7 +32,7 @@ def predict_img(path):
     print(clf.predict([x]))
 
 
-X, y = get_training_data("/home/shrouk_mansour/Downloads/HOG dataset/")
+X, y = get_training_data("HOG dataset/")
 X, y = shuffle_data(X, y)
 clf = SVC(gamma='auto', kernel='linear')
 clf.fit(X, y)
